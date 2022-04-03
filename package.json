@@ -1,6 +1,6 @@
 {
   "name": "@pallad/cursor-encoder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pagination cursor encoding and decoding",
   "main": "compiled/index.js",
   "types": "compiled/index.d.ts",
