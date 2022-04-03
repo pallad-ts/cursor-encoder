@@ -1,5 +1,5 @@
 export * from './Cursor'
 export * from './CursorEncoder';
-export * from './CursorEncoderError';
+export * from './CursorError';
 export * from './isCursor';
 export * from './types';
