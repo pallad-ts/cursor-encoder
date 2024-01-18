@@ -4,6 +4,7 @@ import {create, ID} from '@pallad/id';
 import * as sinon from 'sinon';
 import {Cursor} from "@src/Cursor";
 import {ERRORS} from "@src/errors";
+import '@pallad/errors-dev';
 
 describe('CursorEncoder', () => {
 	let cursorEncoder: CursorEncoder;
@@ -26,7 +27,7 @@ describe('CursorEncoder', () => {
 				expect(() => {
 					cursorEncoder.decode('completely-invalid-base64_for_SURE!:)');
 				})
-					.toThrowError(ERRORS.INVALID_ENCODING.defaultMessage);
+					.toThrowErrorWithCode(ERRORS.INVALID_ENCODING);
 			});
 
 			it.each<[any]>([
@@ -38,7 +39,7 @@ describe('CursorEncoder', () => {
 						Buffer.from(serializer.serialize(input), 'utf8').toString('base64')
 					)
 				})
-					.toThrowError(ERRORS.INVALID_CURSOR_STRUCTURE.defaultMessage);
+					.toThrowErrorWithCode(ERRORS.INVALID_CURSOR_STRUCTURE);
 			});
 		});
 

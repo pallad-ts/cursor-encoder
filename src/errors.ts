@@ -1,15 +1,8 @@
-import {Domain} from "alpha-errors";
-import {formatCode} from "alpha-errors/compiled/codeGenerators";
-import {CursorError} from "./CursorError";
+import {Domain, ErrorDescriptor, formatCodeFactory} from "@pallad/errors";
 
-export const ERRORS = Domain.create({
-	codeGenerator: formatCode('E_CURSOR_%d'),
-	errorClass: CursorError
-}).createErrors(create => {
-	return {
-		INVALID_ENCODING: create('Invalid cursor encoding'),
-		INVALID_CURSOR_STRUCTURE: create('Invalid cursor structure'),
-		CANNOT_DESERIALIZE: create('Cannot deserialize cursor: %s'),
-		CANNOT_SERIALIZE: create('Cannot serialize cursor: %s')
-	}
-})
+const code = formatCodeFactory('E_CURSOR_%c')
+export const ERRORS = new Domain()
+	.addErrorsDescriptorsMap({
+		INVALID_ENCODING: ErrorDescriptor.useDefaultMessage(code(1), 'Invalid cursor encoding'),
+		INVALID_CURSOR_STRUCTURE: ErrorDescriptor.useDefaultMessage(code(2), 'Invalid cursor structure'),
+	})

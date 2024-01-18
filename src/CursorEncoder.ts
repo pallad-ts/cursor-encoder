@@ -13,7 +13,7 @@ export class CursorEncoder {
 		const deserialized = this.serializer.deserialize(buffer.toString('utf8'));
 
 		if (!isCursor(deserialized)) {
-			throw ERRORS.INVALID_CURSOR_STRUCTURE();
+			throw ERRORS.INVALID_CURSOR_STRUCTURE.create();
 		}
 
 		// This is done on purpose to prevent forwarding extra properties
@@ -23,7 +23,7 @@ export class CursorEncoder {
 	private assertBase64(cursor: Base64String) {
 		const buffer = Buffer.from(cursor, 'base64')
 		if (buffer.toString('base64') !== cursor) {
-			throw ERRORS.INVALID_ENCODING();
+			throw ERRORS.INVALID_ENCODING.create();
 		}
 		return buffer;
 	}
