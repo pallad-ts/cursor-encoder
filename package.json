@@ -1,38 +1,17 @@
 {
-  "name": "@pallad/cursor-encoder",
-  "version": "1.1.0",
-  "description": "Pagination cursor encoding and decoding",
-  "main": "compiled/index.js",
-  "types": "compiled/index.d.ts",
-  "scripts": {
-    "lint": "pallad-scripts lint",
-    "compile": "pallad-scripts compile",
-    "test": "pallad-scripts test",
-    "prepack": "npm run compile"
-  },
-  "files": [
-    "compiled"
+  "name": "@pallad/cursor-encoder-monorepo",
+  "private": true,
+  "packageManager": "yarn@4.11.0",
+  "workspaces": [
+    "packages/*"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pallad-ts/cursor-encoder.git"
-  },
-  "author": "Łukasz Kużyński <lukasz.kuzynski@gmail.com> (http://wookieb.pl)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pallad-ts/cursor-encoder/issues"
-  },
-  "homepage": "https://github.com/pallad-ts/cursor-encoder#readme",
-  "peerDependencies": {
-    "tslib": "^2"
+  "scripts": {
+    "lint": "lerna run lint",
+    "compile": "lerna run compile",
+    "test": "lerna run test"
   },
   "devDependencies": {
-    "@pallad/errors-dev": "^1.1.0",
-    "@pallad/id": "^1.1.0",
-    "@pallad/scripts": "^3"
-  },
-  "dependencies": {
-    "@pallad/errors": "^1.0.1",
-    "alpha-serializer": "^0.5.6"
+    "@pallad/plop-templates": "^1.0.0",
+    "lerna": "^8.2.3"
   }
 }

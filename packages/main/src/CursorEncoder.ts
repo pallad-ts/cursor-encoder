@@ -21,8 +21,8 @@ export class CursorEncoder {
 	}
 
 	private assertBase64(cursor: Base64String) {
-		const buffer = Buffer.from(cursor, 'base64')
-		if (buffer.toString('base64') !== cursor) {
+		const buffer = Buffer.from(cursor, 'base64url')
+		if (buffer.toString('base64url') !== cursor) {
 			throw ERRORS.INVALID_ENCODING.create();
 		}
 		return buffer;
@@ -30,6 +30,6 @@ export class CursorEncoder {
 
 	encode(cursor: Cursor): Base64String {
 		const serialized = this.serializer.serialize(cursor);
-		return Buffer.from(serialized, 'utf8').toString('base64');
+		return Buffer.from(serialized, 'utf8').toString('base64url');
 	}
 }
