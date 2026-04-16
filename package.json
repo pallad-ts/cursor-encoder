@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "yarn@4.11.0",
   "workspaces": [
-    "packages/*"
+    "package/*"
   ],
   "scripts": {
     "lint": "lerna run lint",
@@ -11,7 +11,11 @@
     "test": "lerna run test"
   },
   "devDependencies": {
-    "@pallad/plop-templates": "^1.0.0",
-    "lerna": "^8.2.3"
+    "@pallad/plop-templates": "^1.2.0",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "barrelsby": "^2.8.1",
+    "lerna": "^8.2.3",
+    "plop": "^4.0.5",
+    "prettier": "^3.8.3"
   }
 }

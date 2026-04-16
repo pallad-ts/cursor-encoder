@@ -1,9 +1,9 @@
 import {JSONAdapter, Serializer, normalizer} from 'alpha-serializer';
-import {CursorEncoder} from "@src/CursorEncoder";
+import {CursorEncoder} from "../CursorEncoder";
 import {create, ID} from '@pallad/id';
 import * as sinon from 'sinon';
-import {Cursor} from "@src/Cursor";
-import {ERRORS} from "@src/errors";
+import {Cursor} from "../Cursor";
+import {ERRORS} from "../errors";
 import '@pallad/errors-dev';
 
 describe('CursorEncoder', () => {
