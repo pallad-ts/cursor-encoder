@@ -31,7 +31,8 @@
   "devDependencies": {
     "@pallad/errors-dev": "^1.1.0",
     "@pallad/id": "^1.1.0",
-    "@pallad/scripts": "^4.2.2"
+    "@types/sinon": "^21",
+    "sinon": "^21.1.2"
   },
   "dependencies": {
     "@pallad/errors": "^1.0.1",

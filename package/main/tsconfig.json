@@ -3,9 +3,9 @@
   "compilerOptions": {
     "rootDir": "src",
     "composite": true,
-    "outDir": "dist",
-    "types": ["vitest/globals"]
+    "outDir": "dist"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "__tests__/**"],
+  "include": [
+    "src/**/*"
+  ]
 }

@@ -1,4 +1,6 @@
 import {CursorEncoder} from '@pallad/cursor-encoder';
+import {GraphQLError} from "graphql/error";
+import {GraphQLScalarType} from "graphql";
 
 export function createGraphQLCursor(encoder: CursorEncoder) {
 

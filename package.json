@@ -11,11 +11,14 @@
     "test": "lerna run test"
   },
   "devDependencies": {
-    "@pallad/plop-templates": "^1.2.0",
-    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
-    "barrelsby": "^2.8.1",
-    "lerna": "^8.2.3",
-    "plop": "^4.0.5",
-    "prettier": "^3.8.3"
+    "@pallad/plop-templates": "^1",
+    "@trivago/prettier-plugin-sort-imports": "^6",
+    "@types/node": "^24",
+    "barrelsby": "^2",
+    "lerna": "^8",
+    "plop": "^4",
+    "prettier": "^3",
+    "typescript": "^5",
+    "vitest": "^4.1.4"
   }
 }
