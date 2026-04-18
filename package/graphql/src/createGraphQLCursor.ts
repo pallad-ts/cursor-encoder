@@ -1,9 +1,11 @@
-import {CursorEncoder} from '@pallad/cursor-encoder';
-import {GraphQLError} from "graphql/error";
-import {GraphQLScalarType} from "graphql";
+import { CursorEncoder, Cursor } from "@pallad/cursor-encoder";
+import { GraphQLError } from "graphql/error";
+import { GraphQLScalarType } from "graphql";
+import * as is from "predicates";
+
+const isCursor = is.all(is.property("i", is.string));
 
 export function createGraphQLCursor(encoder: CursorEncoder) {
-
 	function stringToCursor(value: string) {
 		try {
 			return encoder.decode(value);
@@ -12,17 +14,15 @@ export function createGraphQLCursor(encoder: CursorEncoder) {
 		}
 	}
 
-
 	return new GraphQLScalarType({
 		name: "Cursor",
 		description: "Cursor for pagination",
 
 		serialize(value: unknown) {
-			const parsed = CursorSchema.safeParse(value);
-			if (!parsed.success) {
-				throw new GraphQLError("Invalid cursor object");
+			if (isCursor(value)) {
+				return encoder.encode(value as Cursor);
 			}
-			return encoder.encode(parsed.data);
+			throw new GraphQLError("Invalid cursor object");
 		},
 
 		parseValue(value) {

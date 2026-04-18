@@ -15,6 +15,7 @@
     "@trivago/prettier-plugin-sort-imports": "^6",
     "@types/node": "^24",
     "barrelsby": "^2",
+    "eslint": "^10.2.1",
     "lerna": "^8",
     "plop": "^4",
     "prettier": "^3",

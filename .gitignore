@@ -8,6 +8,8 @@ junit.xml
 .eslintcache
 tsnode-cache
 .task
+*.tsbuildinfo
+dist
 
 .yarn/*
 !.yarn/patches

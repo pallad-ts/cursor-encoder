@@ -9,6 +9,6 @@
     "declarationMap": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "node"]
   }
 }

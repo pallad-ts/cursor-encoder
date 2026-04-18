@@ -6,11 +6,12 @@
     "test": "yarn run -TB vitest run --passWithNoTests",
     "lint": "yarn run -TB eslint src/**/*.ts",
     "generate-barrels": "yarn run -TB barrelsby -l replace -L --delete -d ./src",
-    "compile": "yarn run generate-barrels && yarn run -TB preconstruct build"
+    "compile": "yarn run generate-barrels && yarn run -TB tsc --build --force tsconfig.build.json"
   },
   "packageManager": "yarn@4.11.0",
   "dependencies": {
     "@pallad/cursor-encoder": "workspace:^",
-    "graphql": "^16.13.2"
+    "graphql": "^16.13.2",
+    "predicates": "^2.0.3"
   }
 }
