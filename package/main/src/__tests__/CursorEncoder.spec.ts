@@ -33,7 +33,7 @@ describe("CursorEncoder", () => {
 				input => {
 					expect(() => {
 						cursorEncoder.decode(
-							Buffer.from(serializer.serialize(input), "utf8").toString("base64")
+							Buffer.from(serializer.serialize(input), "utf8").toString("base64url")
 						);
 					}).toThrowErrorWithCode(ERRORS.INVALID_CURSOR_STRUCTURE);
 				}
@@ -66,7 +66,7 @@ describe("CursorEncoder", () => {
 			const cursor: Cursor = { i: "test" };
 
 			const result = encoder.encode(cursor);
-			expect(result).toEqual(Buffer.from(dummyResult, "utf8").toString("base64"));
+			expect(result).toEqual(Buffer.from(dummyResult, "utf8").toString("base64url"));
 		});
 	});
 });

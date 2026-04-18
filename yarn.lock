@@ -965,7 +965,6 @@ __metadata:
   dependencies:
     "@pallad/cursor-encoder": "workspace:^"
     graphql: "npm:^16.13.2"
-    predicates: "npm:^2.0.3"
   languageName: unknown
   linkType: soft
 
@@ -7044,7 +7043,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"predicates@npm:^2.0.0, predicates@npm:^2.0.3":
+"predicates@npm:^2.0.0":
   version: 2.0.3
   resolution: "predicates@npm:2.0.3"
   dependencies:

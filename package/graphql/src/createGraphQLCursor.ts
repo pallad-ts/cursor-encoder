@@ -1,9 +1,7 @@
-import { CursorEncoder, Cursor } from "@pallad/cursor-encoder";
+import { CursorEncoder, Cursor, isCursor } from "@pallad/cursor-encoder";
 import { GraphQLError } from "graphql/error";
 import { GraphQLScalarType } from "graphql";
 import * as is from "predicates";
-
-const isCursor = is.all(is.property("i", is.string));
 
 export function createGraphQLCursor(encoder: CursorEncoder) {
 	function stringToCursor(value: string) {
