@@ -1,6 +1,6 @@
 {
   "name": "@pallad/cursor-encoder-graphql",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
@@ -28,7 +28,7 @@
   },
   "packageManager": "yarn@4.11.0",
   "dependencies": {
-    "@pallad/cursor-encoder": "*",
+    "@pallad/cursor-encoder": "^2.0.0",
     "graphql": "^16.13.2"
   }
 }
