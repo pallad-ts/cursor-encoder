@@ -1,7 +1,25 @@
 {
   "name": "@pallad/cursor-encoder-graphql",
   "version": "0.0.0",
-  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pallad-ts/cursor-encoder.git",
+    "directory": "package/graphql"
+  },
+  "author": "Łukasz Kużyński <lukasz.kuzynski@gmail.com> (http://wookieb.pl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pallad-ts/cursor-encoder/issues"
+  },
+  "homepage": "https://github.com/pallad-ts/cursor-encoder#readme",
   "scripts": {
     "test": "yarn run -TB vitest run --passWithNoTests",
     "lint": "yarn run -TB eslint src/**/*.ts",

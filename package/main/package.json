@@ -5,6 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "packageManager": "yarn@4.11.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "yarn run -TB vitest run --passWithNoTests",
     "lint": "yarn run -TB eslint src/**/*.ts",
@@ -17,7 +20,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pallad-ts/cursor-encoder.git"
+    "url": "git+https://github.com/pallad-ts/cursor-encoder.git",
+    "directory": "package/main"
   },
   "author": "Łukasz Kużyński <lukasz.kuzynski@gmail.com> (http://wookieb.pl)",
   "license": "MIT",
