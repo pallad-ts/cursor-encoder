@@ -28,7 +28,7 @@
   },
   "packageManager": "yarn@4.11.0",
   "dependencies": {
-    "@pallad/cursor-encoder": "workspace:^",
+    "@pallad/cursor-encoder": "*",
     "graphql": "^16.13.2"
   }
 }

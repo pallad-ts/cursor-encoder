@@ -987,7 +987,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pallad/cursor-encoder-graphql@workspace:package/graphql"
   dependencies:
-    "@pallad/cursor-encoder": "workspace:^"
+    "@pallad/cursor-encoder": "npm:*"
     graphql: "npm:^16.13.2"
   languageName: unknown
   linkType: soft
@@ -1010,7 +1010,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pallad/cursor-encoder@workspace:^, @pallad/cursor-encoder@workspace:package/main":
+"@pallad/cursor-encoder@npm:*, @pallad/cursor-encoder@workspace:package/main":
   version: 0.0.0-use.local
   resolution: "@pallad/cursor-encoder@workspace:package/main"
   dependencies:
