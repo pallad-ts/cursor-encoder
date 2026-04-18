@@ -76,29 +76,6 @@ jobs:
             PKG_VERSION=$(node -p "require(\"./package.json\").version")
             PACKAGE_ID="${PKG_NAME}@${PKG_VERSION}"
 
-            DEPENDENCY_SPECS=$(node -e "const pkg=require(\"./package.json\"); const deps={...(pkg.dependencies||{}), ...(pkg.optionalDependencies||{})}; for (const [name, range] of Object.entries(deps)) { if (/^(workspace:|file:|link:|portal:|patch:|git\\+|https?:)/.test(range)) continue; process.stdout.write(`${name}@${range}\\n`); }")
-
-            if [[ -n "${DEPENDENCY_SPECS}" ]]; then
-              while IFS= read -r DEP_SPEC; do
-                if [[ -z "${DEP_SPEC}" ]]; then
-                  continue
-                fi
-
-                for ATTEMPT in {1..24}; do
-                  if npm view "${DEP_SPEC}" version >/dev/null 2>&1; then
-                    break
-                  fi
-
-                  if [[ "${ATTEMPT}" -eq 24 ]]; then
-                    echo "Dependency ${DEP_SPEC} is not available on npm" >&2
-                    exit 1
-                  fi
-
-                  sleep 5
-                done
-              done <<< "${DEPENDENCY_SPECS}"
-            fi
-
             if npm view "${PACKAGE_ID}" version >/dev/null 2>&1; then
               echo "Skipping ${PACKAGE_ID} (already published)"
             else
