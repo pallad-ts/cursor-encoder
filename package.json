@@ -11,6 +11,7 @@
     "test": "lerna run test"
   },
   "devDependencies": {
+    "@pallad/entrysmith": "^0.2.1",
     "@pallad/eslint-config": "^2.4.0",
     "@pallad/plop-templates": "^1",
     "@trivago/prettier-plugin-sort-imports": "^6",
